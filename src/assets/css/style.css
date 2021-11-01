@@ -1,0 +1,513 @@
+/* common css */
+
+.project-border-left {
+  border-left: 4px solid #fff;
+}
+
+.navbar-default .nav > li > a:hover,
+.navbar-default .nav > li > a:focus {
+  background-color: #3d3d3d;
+  color: white;
+}
+
+#page-wrapper[title="login"] {
+  width: 100%;
+}
+
+/* login page css */
+
+.zl-home-page-table .table-project-list .project-title .zl-project-font {
+  font-weight: 600 !important;
+}
+
+.login-design .logo {
+  max-width: 249px;
+}
+
+.middle-box .login-center .welcome .m-t .form-group {
+  margin-bottom: 15px;
+}
+
+.login-center .btn-login {
+  background-color: #231f20;
+  color: #fff;
+}
+
+.loginscreen.middle-box {
+  max-width: 340px;
+  width: 100%;
+}
+
+.login-center .btn-login:hover {
+  color: #fff;
+}
+
+.login-center .welcome {
+  margin-top: 35px;
+  margin-bottom: 18px;
+  color: #6b6e70;
+}
+
+.form-control:focus,
+.single-line:focus {
+  border-color: #231f20;
+}
+
+.login-design {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 100vh;
+}
+
+.middle-box {
+  padding-top: 0;
+}
+
+.login-center {
+  margin: auto;
+  padding: 20px;
+  width: 100%;
+}
+
+/* home page css */
+
+.zl-toggle .navbar-minimalize,
+.btn-create {
+  background-color: #231f20;
+  border-color: #231f20;
+  color: #fff;
+}
+
+.zl-home-page-table .appearance {
+  appearance: none;
+}
+
+.fa-sort-down {
+  position: absolute;
+  top: 8px;
+  right: 17px;
+  pointer-events: none;
+}
+
+.zl-home-page-table .ibox .ibox-content {
+  padding: 25px 21px 21px 20px;
+}
+
+.zl-home-page-table .ibox-content .zl-table-height {
+  height: 30px;
+}
+
+.zl-home-page-table .input-search {
+  height: 35px !important;
+}
+
+.zl-home-page-table .ibox-content .m-b .form-control {
+  line-height: 20px;
+  font-size: 14px;
+}
+
+.zl-home-page-table .table-project-list .project-title li,
+.table-project-list .project-title li a {
+  font-size: 11px;
+  color: #676a6c;
+}
+
+.zl-home-page-table .table-project-list .project-title a {
+  font-weight: 400;
+}
+
+.zl-home-page-table .zl-table-list {
+  display: flex;
+  gap: 15px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.zl-home-page-table .ibox-spacing-status,
+.zl-home-page-table .ibox-spacing-type {
+  max-width: 120px;
+  width: 100%;
+}
+
+.zl-home-page-table .ibox-spacing-search {
+  width: 100%;
+  height: 30px;
+  grid-column: span 2 / span 2;
+}
+
+.table-project-list .project-completion p {
+  font-size: 11px;
+  color: #676a6c;
+  margin-bottom: 0;
+}
+
+.table-project-list .project-people .badge {
+  font-size: 10px;
+}
+
+.zl-home-page-table .ibox {
+  padding-bottom: 166px;
+}
+
+.zl-home-page-table .ibox-spacing-search .input-search {
+  border-radius: 0;
+}
+
+.navbar-top-links li a {
+  padding: 20px 32px;
+}
+
+.logo-element {
+  padding: 14px 0;
+  background-color: #fff;
+}
+.profile-element img {
+  height: 48px;
+  width: 49px;
+  object-fit: cover;
+}
+
+.zl-toggle .navbar-minimalize:hover,
+.zl-toggle .navbar-minimalize:focus,
+.zl-toggle .navbar-minimalize:active,
+.btn-create:hover,
+.btn-create:focus,
+.btn-create:active {
+  background-color: #2f4050;
+  border-color: #2f4050;
+  color: #fff;
+}
+
+.navbar-default {
+  background-color: #231f1f;
+  border-color: #231f1f;
+  min-height: 100vh;
+}
+
+.nav-header,
+body.mini-navbar .nav-header {
+  background-color: #231f1f;
+}
+
+.table-project-list .project-people {
+  text-align: left;
+}
+
+.project-actions-buttons {
+  gap: 5px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.zl-project-table {
+  min-width: 991px;
+}
+
+@media (max-width: 400px) {
+  .zl-home-page-table .ibox-content .m-b .form-control {
+    line-height: 12px;
+    font-size: 12px;
+  }
+  .fa-sort-down {
+    right: 8px;
+  }
+}
+
+/* project view page css */
+
+.table-hover tbody tr:hover {
+  color: #212529;
+  background-color: #fff;
+}
+
+.zl-toggle .zl-header-bottom {
+  margin-bottom: 20px;
+}
+
+.zl-toggle .page-heading {
+  margin-bottom: 20px;
+}
+.zl-toggle .view-page-spacing {
+  padding: 0 25px;
+}
+
+.view-page-spacing .ibox .form-control-static {
+  margin-bottom: 0;
+}
+
+.view-page-spacing .zl-project-margin {
+  margin: 0;
+}
+
+.view-page-spacing .zl-project-bottom-margin {
+  margin: 30px 0;
+}
+
+.view-page-spacing .zl-project-top-margin {
+  margin: 5px 0 0 0;
+}
+
+.view-page-spacing .ibox-content {
+  margin-bottom: 258px;
+  padding: 15px 20px 10px 20px;
+}
+
+.view-page-spacing .col-form-label {
+  padding: 0;
+}
+
+.view-page-spacing .ibox-title {
+  border-width: 4px 1px 1px;
+}
+
+.btn-save {
+  background-color: #000;
+  color: #fff;
+  border-color: #000;
+}
+
+.btn-save:hover {
+  color: #fff;
+}
+
+.zl-form-label-padding {
+  padding: 0 15px;
+}
+
+.create-page-spacing .ibox-content {
+  margin-bottom: 65px;
+}
+
+.zl-project-list-form {
+  height: 94px;
+}
+
+/* create project page css */
+
+.select2-selection--multiple {
+  border: 1px solid #000;
+}
+
+.label-margin {
+  position: relative;
+}
+
+.form-radius .abc-radio label::before {
+  border-radius: 4px;
+  margin-left: -22px;
+  background-color: #dedede;
+  border: 1px solid #b1b1b1;
+  filter: drop-shadow(0px 1px 0px rgba(0, 0, 0, 0.09));
+}
+
+.select2-container--bootstrap4.select2-container--focus .select2-selection {
+  box-shadow: none;
+  border-color: #e7eaec;
+}
+
+.zl-project-margin .form-check-inline {
+  margin-right: 14px;
+}
+
+.zl-project-margin .form-gap {
+  gap: 80px;
+  line-height: 28px;
+}
+
+.select2-container--bootstrap4 {
+  max-width: 100%;
+}
+
+.create-page-spacing .ibox-title {
+  border-width: 4px 1px 1px;
+}
+
+.create-page-spacing {
+  padding: 0 25px;
+}
+
+.create-page-spacing .ibox-content {
+  padding: 20px;
+}
+
+.select2-container .select2-selection--multiple .select2-selection__rendered {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  min-height: 34px;
+  gap: 10px;
+}
+
+.select2-container .select2-search--inline .select2-search__field {
+  margin-top: 0;
+}
+
+.zl-form-margin .abc-radio {
+  padding-left: 0;
+}
+
+.zl-project-top-margin {
+  line-height: 1;
+}
+
+.zl-custom-radio .custom-input::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  border: 1px solid #b1b1b1;
+  background-color: #dedede;
+  filter: drop-shadow(0px 1px 0px rgba(0, 0, 0, 0.09));
+  border-radius: 4px;
+}
+
+.zl-custom-radio .custom-input::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: #000;
+  left: 3px;
+  top: 27%;
+  border-radius: 3px;
+  transition: all 0.2s ease-in-out;
+  transform: scale(0);
+}
+
+.zl-custom-radio input {
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.zl-custom-radio input:checked ~ label::after {
+  transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+
+.zl-form-margin .form-check-inline {
+  margin-right: 45px;
+}
+
+.zl-create-gap {
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.zl-custom-radio {
+  position: relative;
+}
+
+.create-page-spacing .col-form-label {
+  padding: 0 15px;
+}
+
+label,
+.select2-selection__rendered {
+  margin-bottom: 0;
+}
+
+.label-margin {
+  padding-left: 20px;
+}
+
+.form-gap-1,
+.status {
+  max-width: 250px;
+}
+
+.zl-form-width {
+  max-width: 250px;
+  margin-top: 10px;
+}
+
+.key-technologies .zl-custom-radio,
+.status .zl-custom-radio {
+  width: 50%;
+}
+
+.form-name .form-control {
+  height: 34px;
+}
+
+.create-page-spacing .ibox-content {
+  border-width: 4px 1px 1px;
+}
+
+.select2-container .select2-selection--multiple {
+  min-height: 34px;
+}
+
+.select2-selection__choice__remove {
+  float: right;
+  color: #c4c4c4;
+  margin-left: 4px;
+}
+
+.select2-container .select2-selection--multiple .select2-selection__rendered {
+  padding-left: 15px;
+}
+
+.tag_dropdown {
+}
+
+@media (max-width: 991px) {
+  .create-page-spacing .zl-create-project-responsive,
+  .zl-create-gap,
+  .create-page-spacing .zl-create-project-links,
+  .create-page-spacing .zl-create-project-key,
+  .create-page-spacing .zl-create-project-tag,
+  .create-page-spacing .zl-create-project-name,
+  .create-page-spacing .status {
+    margin-top: 10px;
+  }
+  .view-page-spacing .col-form-label {
+    padding: 7px 15px;
+  }
+}
+
+@media (max-width: 600px) {
+  .zl-home-page-table .ibox-content .zl-table-height {
+    flex-wrap: wrap;
+    height: 100%;
+  }
+  .zl-home-page-table .ibox-spacing-status,
+  .zl-home-page-table .ibox-spacing-type {
+    max-width: 100%;
+  }
+  .wrapper-content {
+    padding: 20px 0px 40px;
+  }
+  .zl-home-page-table .zl-table-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .zl-home-page-table .ibox-spacing-search {
+    display: grid;
+    grid-column: span 2 / span 2;
+  }
+}
+
+@media (max-width: 400px) {
+  .zl-create-gap {
+    gap: 10px;
+  }
+  .view-page-spacing .ibox-content {
+    padding: 0;
+  }
+  .button-responsive {
+    width: 47%;
+  }
+  .create-page-spacing,
+  .zl-toggle .view-page-spacing {
+    padding: 0 16px;
+  }
+  .view-page-spacing .ibox-content {
+    margin-bottom: 150px;
+  }
+}
