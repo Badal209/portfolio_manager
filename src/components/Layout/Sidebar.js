@@ -84,6 +84,12 @@ const Sidebar = () => {
               <span className="nav-label">Projects</span>
             </Link>
           </li>
+          <li>
+            <Link to={routes.tagPage} className="project-border-left">
+              <i class="fas fa-tags"></i>
+              <span className="nav-label">Tag</span>
+            </Link>
+          </li>
         </ul>
       </div>
     </nav>

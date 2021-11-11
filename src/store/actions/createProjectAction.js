@@ -17,3 +17,13 @@ export const getProject = createAsyncThunk("project", async (id) => {
 
   return response.data;
 });
+export const addProjectData = createAsyncThunk("project", async (data) => {
+  console.log("hytdjfnhtedhtghg");
+  const response = await axios.get(
+    "https://fir-646b6-default-rtdb.firebaseio.com/project.json",
+    data
+  );
+  console.log("GET_PROJECT_DATA", response);
+
+  return response.data;
+});

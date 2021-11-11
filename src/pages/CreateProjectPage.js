@@ -2,13 +2,17 @@ import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { collection, addDoc } from "firebase/firestore";
 import { useHistory, useParams } from "react-router";
-import { getProjects } from "../store/actions/createProjectAction";
+import {
+  addProjectData,
+  getProjects,
+} from "../store/actions/createProjectAction";
 import { addProject } from "../store/slice/createProjectSlice";
 import { db } from "../Firebase";
 import { routes } from "../route/route";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Select from "react-select";
+import { getTagTech } from "../store/actions/tagAction";
 const options = [
   { value: "Mayotte", label: "Mayotte" },
   { value: "Mexico", label: "Mexico" },
@@ -38,7 +42,9 @@ const CreateProjectPage = () => {
   const { id } = useParams();
   console.log("ID", id);
   const dispatch = useDispatch();
-  const projectDetails = useSelector((state) => state.project.project);
+  const projectDetails = useSelector((state) => state.getProject.project);
+  const tags = useSelector((state) => state.tag.tags);
+  console.log("TAGGGG", tags);
   console.log("PROJECT_DETAILS", projectDetails);
 
   const initialValuesCheck = {
@@ -55,8 +61,9 @@ const CreateProjectPage = () => {
   const [checkbox, setCheckbox] = useState(initialValuesCheck);
   const [checkboxError, setCheckboxError] = useState("");
   const [tag, setTag] = useState([]);
+  const [selectedTag, setSelectedTag] = useState([]);
   // const [tag, setTag] = useState([]);
-  console.log("TAG", tag, projectDetails);
+  console.log("TAG", tag, selectedTag);
 
   const [tagError, setTagError] = useState("");
   const [keyFeature, setKeyFeature] = useState("");
@@ -85,8 +92,12 @@ const CreateProjectPage = () => {
     }));
     // setCheckbox([...checkbox, e.target.value]);
   };
+
   const tagHandler = (e) => {
-    setTag(Array.isArray(e) ? e.map((x) => x.value) : []);
+    // setTag(Array.isArray(e) ? e.map((x) => x.value) : []);
+    setSelectedTag(Array.isArray(e) ? e : []);
+    console.log(e, "taghandler");
+    // setTag(tagList);
     // setTag(e.value);
     // console.log(e);
   };
@@ -124,7 +135,7 @@ const CreateProjectPage = () => {
         name: name,
         type: typeRadio,
         KeyTechnologies: checkbox,
-        tag: tag,
+        tag: selectedTag,
         keyFeature: keyFeature,
         link: link,
         status: statusRadio,
@@ -145,8 +156,8 @@ const CreateProjectPage = () => {
           console.log(err);
         });
 
+      dispatch(addProjectData(data));
       dispatch(getProjects(id));
-      dispatch(addProject(data));
 
       //toast notification
       toast.success("Create Project Successfully !", {
@@ -162,7 +173,7 @@ const CreateProjectPage = () => {
     setKeyFeature(item.keyFeature);
     setLink(item.link);
     setStatusRadio(item.status);
-    setTag(item.tag);
+    setSelectedTag(item.tag);
     setTypeRadio(item.type);
   };
 
@@ -174,7 +185,7 @@ const CreateProjectPage = () => {
         name: name,
         type: typeRadio,
         KeyTechnologies: checkbox,
-        tag: tag,
+        tag: selectedTag,
         keyFeature: keyFeature,
         link: link,
         status: statusRadio,
@@ -203,9 +214,11 @@ const CreateProjectPage = () => {
   };
 
   useEffect(() => {
-    if (Object.values(projectDetails).length > 0 && id) {
-      selectUserData(projectDetails);
-      console.log("checkbox", projectDetails);
+    if (projectDetails !== null && projectDetails !== undefined) {
+      if (Object.values(projectDetails).length > 0 && id) {
+        selectUserData(projectDetails);
+        console.log("checkbox", projectDetails);
+      }
     }
   }, [projectDetails]);
 
@@ -230,6 +243,21 @@ const CreateProjectPage = () => {
     }
     return isValid;
   };
+  useEffect(() => {
+    dispatch(getTagTech());
+  },[]);
+  useEffect(() => {
+
+    if (tags) {
+      let tagArray = [];
+      for (let key in tags) {
+        tagArray.push(tags[key]);
+      }
+      setTag(tagArray);
+      // const tagList = Object.values(tags).map((key) => tags[key]);
+      // setTag(tagList);
+    }
+  }, [tags]);
   // const linkIndex = () => {
   //   let linkArray = link.map((item, i) => {
   //     return (
@@ -435,20 +463,27 @@ const CreateProjectPage = () => {
                       className="basic-multi-select"
                       classNamePrefix="select"
                       name="tag"
-                      options={options}
+                      options={tag}
                       required
                       id="tag"
                       onChange={tagHandler}
-                      value={options.filter((obj) => {
-                        console.log("valueTag", tag);
-
-                        console.log("object", obj);
-                        console.log("return", tag?.includes(obj.value));
-                        return tag?.includes(obj.value);
-                      })}
+                      value={selectedTag}
 
                       // value={tag}
                     />
+                    {/* <Select
+                      isMulti
+                      name="tag"
+                      value={tag}
+                      onChange={tagHandler}
+                    >
+                      <option value="">Select the tag</option>
+                      {tagList.map((tag, key) => (
+                        <option key={key} value={tag.label}>
+                          {tag.label}
+                        </option>
+                      ))}
+                    </Select> */}
                   </div>
                 </div>
                 {!tag && tagError ? (

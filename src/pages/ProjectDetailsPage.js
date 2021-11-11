@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router";
 import { getProject } from "../store/actions/createProjectAction";
+// import { getProject } from "../store/actions/createProjectAction";
 
 const ProjectDetailsPage = () => {
   const params = useParams();
@@ -9,7 +10,7 @@ const ProjectDetailsPage = () => {
   const dispatch = useDispatch();
   const { id } = params;
 
-  const projectDetail = useSelector((state) => state.project.project);
+  const projectDetail = useSelector((state) => state.getProject.project);
   console.log("projectlist", projectDetail);
   useEffect(() => {
     dispatch(getProject(id));
@@ -49,7 +50,7 @@ const ProjectDetailsPage = () => {
                   <strong>Name</strong>
                 </label>
                 <div className="col-lg-10">
-                  <p className="form-control-static">{projectDetail.name}</p>
+                  <p className="form-control-static">{projectDetail?.name}</p>
                 </div>
               </div>
               <div className="hr-line-dashed"></div>
@@ -58,7 +59,7 @@ const ProjectDetailsPage = () => {
                   <strong>Type</strong>
                 </label>
                 <div className="col-lg-10">
-                  <p className="form-control-static">{projectDetail.type}</p>
+                  <p className="form-control-static">{projectDetail?.type}</p>
                 </div>
               </div>
               <div className="hr-line-dashed"></div>
@@ -68,7 +69,7 @@ const ProjectDetailsPage = () => {
                 </label>
                 <div className="col-lg-10">
                   <p className="form-control-static">
-                    {renderKeyTechnology(projectDetail.KeyTechnologies)}
+                    {renderKeyTechnology(projectDetail?.KeyTechnologies)}
                   </p>
                 </div>
               </div>
@@ -79,8 +80,8 @@ const ProjectDetailsPage = () => {
                 </label>
                 <div className="col-lg-10">
                   <p className="form-control-static">
-                    {projectDetail.tag &&
-                      projectDetail.tag.map((item) => item).join(",")}
+                    {projectDetail?.tag &&
+                      projectDetail?.tag.map((item) => item.label).join(",")}
                   </p>
                 </div>
               </div>
@@ -91,7 +92,7 @@ const ProjectDetailsPage = () => {
                 </label>
                 <div className="col-lg-10">
                   <p className="form-control-static">
-                    {projectDetail.keyFeature}
+                    {projectDetail?.keyFeature}
                   </p>
                 </div>
               </div>
@@ -101,7 +102,9 @@ const ProjectDetailsPage = () => {
                   <strong>Links</strong>
                 </label>
                 <div className="col-lg-10">
-                  <p className="form-control-static">{projectDetail.link}</p>
+                  <p className="form-control-static">
+                    {(projectDetail?.link).join(", ")}
+                  </p>
                 </div>
               </div>
               <div className="hr-line-dashed"></div>
@@ -110,7 +113,7 @@ const ProjectDetailsPage = () => {
                   <strong>Status</strong>
                 </label>
                 <div className="col-lg-10">
-                  <p className="form-control-static">{projectDetail.status}</p>
+                  <p className="form-control-static">{projectDetail?.status}</p>
                 </div>
               </div>
             </form>
