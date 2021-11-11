@@ -19,17 +19,19 @@ const TagPage = () => {
   };
 
   const addTagHandler = () => {
-    dispatch(
-      tagTech({
-        label: label,
-        value: value,
-      })
-    );
-    setLabel("");
-    setValue("");
-    toast.success("Your tag successfully added", {
-      autoClose: 3000,
-    });
+    if (label && value) {
+      dispatch(
+        tagTech({
+          label: label,
+          value: value,
+        })
+      );
+      setLabel("");
+      setValue("");
+      toast.success("Your tag successfully added", {
+        autoClose: 3000,
+      });
+    }
   };
   //   const getHandler = () => {
   //     dispatch(getTagTech());

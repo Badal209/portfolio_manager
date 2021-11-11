@@ -103,7 +103,7 @@ const ProjectDetailsPage = () => {
                 </label>
                 <div className="col-lg-10">
                   <p className="form-control-static">
-                    {(projectDetail?.link).join(", ")}
+                    {projectDetail?.link && projectDetail?.link.join(", ")}
                   </p>
                 </div>
               </div>

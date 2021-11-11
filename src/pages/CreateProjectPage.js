@@ -13,29 +13,7 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Select from "react-select";
 import { getTagTech } from "../store/actions/tagAction";
-const options = [
-  { value: "Mayotte", label: "Mayotte" },
-  { value: "Mexico", label: "Mexico" },
-  {
-    value: "Micronesia, Federated States of",
-    label: "Micronesia, Federated States of",
-  },
-  { value: "Moldova, Republic of", label: "Moldova, Republic of" },
-  { value: "Monaco", label: "Monaco" },
-  { value: "Mongolia", label: "Mongolia" },
-  { value: "Montenegro", label: "Montenegro" },
-  { value: "Montserrat", label: "Montserrat" },
-  { value: "Morocco", label: "Morocco" },
-  { value: "Mozambique", label: "Mozambique" },
-  { value: "Myanmar", label: "Myanmar" },
-  { value: "Namibia", label: "Namibia" },
-  { value: "Nauru", label: "Nauru" },
-  { value: "Nepal", label: "Nepal" },
-  { value: "Netherlands", label: "Netherlands" },
-  { value: "New Caledonia", label: "New Caledonia" },
-  { value: "New Zealand", label: "New Zealand" },
-  { value: "Nicaragua", label: "Nicaragua" },
-];
+
 toast.configure();
 const CreateProjectPage = () => {
   const history = useHistory();
@@ -245,9 +223,8 @@ const CreateProjectPage = () => {
   };
   useEffect(() => {
     dispatch(getTagTech());
-  },[]);
+  }, []);
   useEffect(() => {
-
     if (tags) {
       let tagArray = [];
       for (let key in tags) {
