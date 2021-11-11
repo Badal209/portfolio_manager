@@ -164,9 +164,11 @@ const DashBoardPage = (props) => {
   //   }
   // }, [type]);
   useEffect(() => {
+    console.log("serchlength", search.length);
     if (status !== "status" || type !== "type" || search.length > 0) {
       console.log("Confirm filter", projectList, search);
-      const filterDataList = projectList.filter((item) => {
+      let list = projectList;
+      const filterDataList = list.filter((item) => {
         if (status !== "status" && type === "type" && search.length === 0) {
           console.log("Status", status);
           console.log(item.status, "item.status");
@@ -222,6 +224,8 @@ const DashBoardPage = (props) => {
       });
       console.log("filterDataList", filterDataList);
       setFilteredProject(filterDataList);
+    } else if (search.length === 0 && status === "status" && type === "type") {
+      setFilteredProject(projectList);
     }
   }, [status, type, search]);
   // when select multi checkbox then given space
